@@ -2,18 +2,20 @@ table
 {
     border-collapse: collapse;
     width: 50%;
-    margin: 5%;
-    align: center;
+    margin: 3%;
+    background-color: rgb(41, 54, 41);
+    border: 3px solid white;
 }
 td, th
 {
     text-align: center;
+    height: 40px;
     border: 1px solid white;
 }
 th
 {
     color: rgb(121, 161, 121);
-    font-size: 20px;
+    font-size: 25px;
 }
 
 body
@@ -22,9 +24,29 @@ body
     color:white;
 }
 
-footer
+button
 {
+    border: 1px solid white;
+    background-color: rgb(121, 161, 121);
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 35px;
+}
+
+#heather
+{
+    height: 80px;
     font-size: 40px;
     color: rgb(121, 161, 121);
     text-align: center;
+}
+
+.left
+{
+    width: 33%;
+    float: left;
+    height: 800px;
+    border: 2px  rgb(121, 161, 121) solid;
 }
