@@ -3,6 +3,7 @@ table
     border-collapse: collapse;
     width: 50%;
     margin: 5%;
+    align: center;
 }
 td, th
 {
