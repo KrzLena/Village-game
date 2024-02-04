@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Willage</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="game.css">
+        <script src="game.js"></script>
+    </head>
+    <body>
+        <footer>VILLAGE</footer>
+        
+        <table><!-----------------------------------------------BUTTONS------------------------------------------------------->
+            <tr>
+                <td><button onclick = "minetree()">TREE</button></td>
+                <td><button onclick = "chopstone()">STONE</button></td>
+                <td><button onclick = "getfood()">CAT</button></td>
+                <td><button onclick = "rest()">BED</button></td>
+            </tr>
+        </table>
+
+        <table><!-----------------------------------------------RESOURCES------------------------------------------------------->
+            <tr>
+                <th colspan = "2">Resourses:</th>
+            </tr>
+            <tr>
+                <td>Wood</td>
+                <td><span id = "wood">100000000</span></td>
+            </tr>
+            <tr>
+                <td>Stone</td>
+                <td><span id = "stone">100000000</span></td>
+            </tr>
+            <tr>
+                <td>Food</td>
+                <td><span id = "food">100000000</span></td>
+            </tr>
+        </table>
+
+        <table><!-----------------------------------------------STATS------------------------------------------------------->
+            <tr>
+                <th colspan = "2">Stats:</th>
+            </tr>
+            <tr>
+                <td>Health</td>
+                <td><span id = "hp">100</span></td>
+            </tr>
+            <tr>
+                <td>Strength</td>
+                <td><span id = "strengh">1</span></td>
+            </tr>
+            <tr>
+                <td>Stamina</td>
+                <td><span id = "stamina">100</span></td>
+            </tr>
+        </table>
+
+        <table><!-----------------------------------------------VILLAGE------------------------------------------------------->
+            <tr>
+                <th colspan = "2">Village:</th>
+            </tr>
+            <tr>
+                <td>Castle LVL</td>
+                <td><span id = "clvl">0</span></td>
+            </tr>
+            <tr>
+                <td>Wooden houses</td>
+                <td><span id = "whouse">0</span></td>
+            </tr>
+            <tr>
+                <td>Stone houses</td>
+                <td><span id = "shouse">0</span></td>
+            </tr>
+            <tr>
+                <td>Villagers</td>
+                <td><span id = "villagers">0</span></td>
+            </tr>
+        </table>
+
+        <table><!-----------------------------------------------SHOP------------------------------------------------------->
+            <tr>
+                <th>Shop:</th><th colspan="2">Costs:</th>
+            </tr>
+            <tr>
+                <td>Upgrade castle</td>
+                <td>Wood and stone: <span id = "maxsw">10000</span> Food: <span id = "maxf">1000</span></td>
+                <td><button onclick="buycastle()">BUY</button></td>
+            </tr>
+            <tr>
+                <td>Buy a wood house</td>
+                <td><span id = "whouse">100 wood 10 stone</span></td>
+                <td><button onclick="buywhouse()">BUY</button></td>
+            </tr>
+            <tr>
+                <td>Buy a stone house</td>
+                <td><span id = "shouse">1 000 stone 100 wood</span></td>
+                <td><button onclick="buyshouse()">BUY</button></td>
+            </tr>
+        </table>
+
+        <table><!-----------------------------------------------MAX------------------------------------------------------->
+            <tr>
+                <th colspan="2">Max:</th>
+            </tr>
+            <tr>
+                <td>Villagers</td>
+                <td><span id = "maxvillagers">6</span></td>
+            </tr>
+            <tr>
+                <td>Wood houses</td>
+                <td><span id = "mwh">5</span></td>
+            </tr>
+            <tr>
+                <td>Stone houses</td>
+                <td><span id = "msh">1</span></td>
+            </tr>
+        </table>
+    </body>
+</html>

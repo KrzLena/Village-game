@@ -1,0 +1,29 @@
+table
+{
+    border-collapse: collapse;
+    width: 50%;
+    margin: 5%;
+}
+td, th
+{
+    text-align: center;
+    border: 1px solid white;
+}
+th
+{
+    color: rgb(121, 161, 121);
+    font-size: 20px;
+}
+
+body
+{
+    background-color: rgb(27, 27, 27);
+    color:white;
+}
+
+footer
+{
+    font-size: 40px;
+    color: rgb(121, 161, 121);
+    text-align: center;
+}
