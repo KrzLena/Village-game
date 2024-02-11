@@ -1,8 +1,8 @@
 var villagers = 0;
 var maxvillagers = 0;
-var wood = 100000000;
-var stone = 100000000;
-var food = 100000000;
+var wood = 0;
+var stone = 0;
+var food = 0;
 
 //whouse
 var whouse = 0;
@@ -29,10 +29,9 @@ var stamina = 100;
 alert("Welcome "+player+"!") 
 var odp = confirm("Would you like to start?");
 
-console.log(odp)
 if (odp == 1)
 {
-    console.log("Welcome "+player+". I see you're looking at the console rn. Hope you're having an amazing day ;3")
+    console.log("Welcome "+player+".")
 }
 else
 {
@@ -87,17 +86,28 @@ function getfood()
 {
     var morefood = document.getElementById("food");
     var rest = document.getElementById("stamina");
+    var hurt = document.getElementById("hp");
     food += (Math.round(strengh) + villagers);
     stamina -= 5;
+    HP-=2;
 
     if(stamina == -5)
     {
         stamina = 0;
+        HP+=2;
         food -=(Math.round(strengh) + villagers);
     }
 
+    if(HP < 0)
+    {
+        alert("You lost the game :(");
+        location.reload();
+    }
+    
+
     rest.innerHTML = stamina;
     morefood.innerHTML = food;
+    hurt.innerHTML = HP;
 }
 
 
@@ -106,7 +116,8 @@ function rest()
 {
     var heal = document.getElementById("hp");
     var rest = document.getElementById("stamina");
-    HP +=5;
+
+    HP +=1;
     stamina +=5;
 
     if (stamina>100)
@@ -122,6 +133,28 @@ function rest()
     rest.innerHTML = stamina;
 }
 
+function eat()
+{
+    var eatfood = document.getElementById("food");
+    var heal = document.getElementById("hp");
+
+    if( food > 0)
+    {
+        HP +=10;
+        food-=1;
+
+        if(HP>100)
+        {
+            HP = 100;
+            food+=1;
+        }
+    }
+
+    heal.innerHTML = HP;
+    eatfood.innerHTML = food;
+}
+
+
 function buycastle()
 {
     var dewood = document.getElementById("wood");
@@ -133,6 +166,7 @@ function buycastle()
     var mv = document.getElementById("maxvillagers");
     var mwh = document.getElementById("mwh");
     var msh = document.getElementById("msh");
+    var image2 = document.getElementById("lvl");
 
     if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl < 3)
     {
@@ -146,9 +180,10 @@ function buycastle()
         maxwh *=2;
         maxsh *=3;
         maxvillagers = (maxwh*2)+(maxsh*5);
+        console.log(castlelvl+" 1");
     }
 
-    if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl < 5 && castlelvl >= 3)
+    else if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl < 5 && castlelvl >= 3)
     {
         food -= maxfood;
         wood -= maxstonewood;
@@ -160,22 +195,11 @@ function buycastle()
         maxwh +=40;
         maxsh +=40;
         maxvillagers = (maxwh*2)+(maxsh*5);
-    }
-    if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl < 7 && castlelvl >= 5)
-    {
-        food -= maxfood;
-        wood -= maxstonewood;
-        stone -= maxstonewood;
-        maxstonewood *= 2;
-        maxfood *=2;
-        castlelvl +=1;
-        strengh +=10*castlelvl;
-        maxwh +=80;
-        maxsh +=80;
-        maxvillagers = (maxwh*2)+(maxsh*5);
+        image2.src = "lvl2.png";
+        console.log(castlelvl+" 2");
     }
 
-    if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl >= 7)
+    else if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl < 7 && castlelvl >= 5)
     {
         food -= maxfood;
         wood -= maxstonewood;
@@ -187,6 +211,23 @@ function buycastle()
         maxwh +=80;
         maxsh +=80;
         maxvillagers = (maxwh*2)+(maxsh*5);
+        image2.src = "lvl3.png";
+        console.log(castlelvl);
+    }
+
+    else if(food >= maxfood && wood >= maxstonewood && stone >= maxstonewood && castlelvl >= 7 )
+    {
+        food -= maxfood;
+        wood -= maxstonewood;
+        stone -= maxstonewood;
+        maxstonewood *= 2;
+        maxfood *=2;
+        castlelvl +=1;
+        strengh +=10*castlelvl;
+        maxwh +=80;
+        maxsh +=80;
+        maxvillagers = (maxwh*2)+(maxsh*5);
+        image2.src = "lvl4.png";
     }
 
     if (castlelvl>9)
