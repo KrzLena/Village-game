@@ -21,12 +21,14 @@
                             <td>STONE</td>
                             <td>CAT</td>
                             <td>BED</td>
+                            <td>EAT</td>
                         </tr>
                         <tr>
                             <td><button onclick = "minetree()" class = "materialsb">+</button></td>
                             <td><button onclick = "chopstone()" class = "materialsb">+</button></td>
                             <td><button onclick = "getfood()" class = "materialsb">+</button></td>
                             <td><button onclick = "rest()" class = "materialsb">+</button></td>
+                            <td><button onclick = "eat()" class = "materialsb">+</button></td>
                         </tr>
                     </table>
 
@@ -36,15 +38,15 @@
                             </tr>
                             <tr>
                                 <td>Wood</td>
-                                <td><span id = "wood">100000000</span></td>
+                                <td><span id = "wood">0</span></td>
                             </tr>
                             <tr>
                                 <td>Stone</td>
-                                <td><span id = "stone">100000000</span></td>
+                                <td><span id = "stone">0</span></td>
                             </tr>
                             <tr>
                                 <td>Food</td>
-                                <td><span id = "food">100000000</span></td>
+                                <td><span id = "food">0</span></td>
                             </tr>
                         </table>
 
@@ -136,7 +138,7 @@
             </div>
             <div class = "main3">
                 <p id = "heather">Your kingdom</p>
-                <img src="lvl1.png">
+                <img id="lvl" src="lvl1.png">
             </div>
         </div>
     </body>
